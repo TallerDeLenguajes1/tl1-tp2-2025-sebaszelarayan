@@ -1,0 +1,9 @@
+##Respuestas
+# 2-f.¿Puede ver el archivo tp2_1_2.c? ¿Por qué?
+No se puede ver el archivo por que nos encontramos en otra rama(main) y en esta rama no se creo tal archivo.
+
+# 2-f.En VSCode vuelva al “Source Control” ¿Qué diferencias nota?
+Se ve en que la rama (opcion 2) hay un archivo creado (externo al main) mientras que agregamos un archivo txt en el (main).
+
+# 2-f.En VSCode vuelva al “Source Control” ¿Qué diferencias nota?
+luego del coando git merge Opcion_2 -m "merge Opcion_2" unimos la rama (opcion 2) con la rama (main) adjuntando todos los archivos.

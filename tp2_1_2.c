@@ -8,11 +8,13 @@ int main()
 {
     // codigo a completar
     double vt[N]; 
+    int i;
     double *pvt=vt;  
     srand(time(NULL));
-for(int i=0; i < N ; i++){
-    pvt[i]=1+rand()%100;
-    printf("%.0f,", pvt[i]);
-}
+    for(i=0; i < N ; i++){
+        *(pvt + i)=1+rand()%100;
+        printf("%.0f,", *(pvt + i));
+    }   
+    pvt -= i;
     return 0;
 }
