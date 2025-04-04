@@ -39,7 +39,8 @@ int main()
     listarPCs(pc,cantidad);
     //funcion pc mas vieja
     mostrarMasVieja(pc,cantidad);
-
+    //funcion mas veloz
+    mostrarMasVeloz(pc,cantidad);
     return 0;
 }
 //desarrollo de funciones
@@ -54,7 +55,7 @@ void mostrarPC(Tcompu pc){
 }
 
 
-
+//funcion listar pcs
 void listarPCs(Tcompu pc[], int cantidad){
     for (int i = 0; i < cantidad; i++)
     {
@@ -63,17 +64,32 @@ void listarPCs(Tcompu pc[], int cantidad){
     
 
 }
-
+//funcion mostrarmas vieja
 void mostrarMasVieja(Tcompu pc[], int cantidad){
     //var aux
-    int max=3000,p;//variable guada el maximo y p la posicion del mismo
+    int max_a=3000,p;//variable guada el maximo de año y p la posicion del mismo
     printf("------PC mas Vieja------\n");
     for (int i = 0; i < cantidad; i++)
     {
-        if (pc[i].year<max)
+        if (pc[i].year<max_a)
         {
             p=i;
-            max=pc[i].year;
+            max_a=pc[i].year;
+        }
+    }
+    mostrarPC(pc[p]);
+}
+//funcion mas veloz
+void mostrarMasVeloz(Tcompu pc[], int cantidad){
+    //var aux
+    int max_v=0,p;//variable guada el maximo de velocidad y p la posicion del mismo
+    printf("------PC mas Veloz------\n");
+    for (int i = 0; i < cantidad; i++)
+    {
+        if (pc[i].velocidad>max_v)
+        {
+            p=i;
+            max_v=pc[i].velocidad;
         }
     }
     mostrarPC(pc[p]);
