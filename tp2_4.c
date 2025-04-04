@@ -9,23 +9,30 @@ struct {
     int year; // Año de fabricación (valor entre 2015 y 2024)
     int cantidad_nucleos; // Cantidad de núcleos (valor entre 1 y 8)
     char *tipo_cpu; // Tipo de procesador (apuntador a cadena de caracteres)
-}typedef compu;
+}typedef Tcompu;
 
-void CrearStock(int num_pc,compu *pc);
+//Definicion funciones 
+void listarPCs(Tcompu pc[], int cantidad);
+void mostrarMasVieja(Tcompu pc[], int cantidad);
+void mostrarMasVeloz(Tcompu pc[], int cantidad);
+
 int main()
 {
-    int num_pc=5;
-    compu *pc=(compu *)malloc(sizeof(compu)*num_pc);
+    //carga de datos
+    Tcompu pc[5];
+    char tipos[6][10] = {"Intel", "AMD", "Celeron", "Athlon", "Core", "Pentium"};
+    srand(time(NULL));
+    for (int i = 0; i < 5; i++)
+    {
+        pc[i].velocidad=1+rand()%(3-1+1);
+        pc[i].year=2015+rand()%(2024-2015+1);
+        pc[i].cantidad_nucleos=1+rand()%(8-1+1);
+        pc[i].tipo_cpu=tipos+(rand()%6);
+    }
 
-    CrearStock(num_pc,pc);
 
+
+    
     return 0;
 }
-void CrearStock(int num_pc,compu *pc){
-    srand(time(NULL));
-    for (int i = 0; i < num_pc; i++)
-    {
-        pc[i].velocidad=2015+rand()%(2024-2015+1);
-    }
-    
-}
+//desarrollo de funciones
