@@ -7,14 +7,19 @@
 int main()
 {
     // codigo a completar
-    double vt[N]; 
     int i;
-    double *pvt=vt;  
+    int vt[N];  
+    //decalaro el puntero y asigno a el vector
+    int *pvt=vt; 
+    //recarago la semilla
     srand(time(NULL));
+    //recorro el vector
     for(i=0; i < N ; i++){
+        //mediante el puntero pvt y notacion indexada lleno los valores del vector vt 
         *(pvt + i)=1+rand()%100;
-        printf("%.0f,", *(pvt + i));
-    }   
+        //muestro los datos cargados por el puntero pvt
+        printf("%d ",*(pvt + i));
+    }  
     pvt -= i;
     return 0;
 }

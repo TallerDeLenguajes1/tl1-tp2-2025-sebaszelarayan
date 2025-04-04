@@ -8,10 +8,10 @@ int main()
 {
     // codigo a completar
     int i;
-    double vt[N];   
+    int vt[N];   
 for(i=0; i < N ; i++){
     vt[i]=1+rand()%100;
-    printf("%.0f \n", vt[i]);
+    printf("%d \n", vt[i]);
 }
     return 0;
 }
