@@ -21,7 +21,7 @@ int main()
 {
     //carga de datos
     Tcompu pc[5];
-    int cantidad;
+    int cantidad=5;
     char tipos[6][10] = {"Intel", "AMD", "Celeron", "Athlon", "Core", "Pentium"};
     srand(time(NULL));
     //cargo el arreglo pc con datos aleatorios
@@ -36,9 +36,9 @@ int main()
     //utilizo funciones
 
     //funcion listar pcs
-    printf("Ingrese la cantidad de PC's a mostrar(<=5): \n");
-    scanf("%d",&cantidad);
     listarPCs(pc,cantidad);
+    //funcion pc mas vieja
+    mostrarMasVieja(pc,cantidad);
 
     return 0;
 }
@@ -62,4 +62,19 @@ void listarPCs(Tcompu pc[], int cantidad){
     }
     
 
+}
+
+void mostrarMasVieja(Tcompu pc[], int cantidad){
+    //var aux
+    int max=3000,p;//variable guada el maximo y p la posicion del mismo
+    printf("------PC mas Vieja------\n");
+    for (int i = 0; i < cantidad; i++)
+    {
+        if (pc[i].year<max)
+        {
+            p=i;
+            max=pc[i].year;
+        }
+    }
+    mostrarPC(pc[p]);
 }
